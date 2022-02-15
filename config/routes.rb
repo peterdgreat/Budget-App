@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :spendings
+  resources :groups
+
   devise_for :users, controllers: {
         sessions: 'users/sessions',
         registrations: 'users/registrations',

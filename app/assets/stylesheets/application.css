@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+.smart {
+  color: #434b54;
+}
+
+.log-in-container {
+  height: 100vh;
+}
+
+.btn-l {
+  background-color: #3778c2;
+  color: #434b54;
+}
+
+.bt-s {
+  background-color: #fff;
+  color: #434b54;
+}
+
+.wrapper {
+  margin-bottom: 250px;
+}
+
+.btn {
+  width: 250px;
+}

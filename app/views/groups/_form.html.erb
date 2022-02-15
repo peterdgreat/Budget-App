@@ -23,10 +23,11 @@
     <%= form.file_field :image %>
   </div>
 
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
-  </div>
+
+<%= form.radio_button :user_id, "#{current_user.id}" %>
+<%= form.label :user_id, "Click to confirm name #{current_user.name}" %>
+
+
   <div>
     <%= form.submit %>
   </div>

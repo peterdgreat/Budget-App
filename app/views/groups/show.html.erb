@@ -1,10 +1,13 @@
-<p style="color: green"><%= notice %></p>
 
+  <% if group.errors.any? %>
+<p style="color: green"><%= notice %></p>
+<%end%>
 <%= render @group %>
 
 <div>
   <%= link_to "Edit this group", edit_group_path(@group) %> |
   <%= link_to "Back to groups", groups_path %>
+  <%= link_to "New spending", new_spending_path %>
 
   <%= button_to "Destroy this group", @group, method: :delete %>
 </div>

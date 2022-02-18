@@ -3,9 +3,9 @@ class SpendingsController < ApplicationController
 
   # GET /spendings or /spendings.json
   def index
-    @spendings = Spending.all
+    @spendings = current_user.spendings.all
     @groups = Group.where(user: current_user)
-    @total_spending = Spending.all.sum(:amount)
+    @total_spending = @spendings.all.sum(:amount)
   end
 
   # GET /spendings/1 or /spendings/1.json

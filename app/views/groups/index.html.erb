@@ -2,27 +2,18 @@
 
 
 <%if user_signed_in?%>
-<%= link_to "New group", new_group_path %>
-Hello, <%=current_user.name%>
-<%= @total_spending%>
-  <%
-=begin%>
- <%@groups.each do |group|%> 
-    <%group.spendings.each do |spending|%>
-      <%=spending%>
-      <%end%>
-    <%end%> 
-<%
-=end%>
+
+  <% if @groups.blank?%>
+    <p>You don't have any category yet! Click below to add one.</p>
+  <% else %>
 <div id="groups">
   <% @groups.each do |group| %>
     <%= render group %>
-    <p>
-      <%= link_to "Show this group", group %>
-    </p>
   <% end %>
 </div>
 
+<%end%>
+<%= link_to "New group", new_group_path %>
  <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-danger ms-1" %>
 <%else%>
 <div class="d-flex flex-column justify-content-end align-items-center log-in-container">

@@ -1,6 +1,8 @@
 <h2>LOG IN</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
 <div class="d-flex flex-column align-items-center">
   <div class="field">
     <%= f.label :email, class: "form-label" %><br />

@@ -4,6 +4,16 @@
 <%if user_signed_in?%>
 <%= link_to "New group", new_group_path %>
 Hello, <%=current_user.name%>
+<%= @total_spending%>
+  <%
+=begin%>
+ <%@groups.each do |group|%> 
+    <%group.spendings.each do |spending|%>
+      <%=spending%>
+      <%end%>
+    <%end%> 
+<%
+=end%>
 <div id="groups">
   <% @groups.each do |group| %>
     <%= render group %>

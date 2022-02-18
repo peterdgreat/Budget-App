@@ -1,17 +1,41 @@
-<div id="<%= dom_id group %>">
-  <p>
-    <strong>Name:</strong>
+
+ <%
+=begin%>
+ <div class= "border border-primary">  
+<%
+=end%>
+
+<%= link_to group_path(group.id), class:"text-decoration-none text-dark shadow d-flex mx-3  " do %>
+<%
+=begin%>
+ <div class = "d-flex justify-content-between "> 
+<%
+=end%>
+   <div>
+    <%= image_tag group.image_url, :class => "icon" %>
+  </div>
+  <div class=" d-flex w-100  mx-3 justify-content-between ">
+  <div>
     <%= group.name %>
-  </p>
+  </div>
 
-  <p>
-    <strong>Image:</strong>
-    <%= image_tag group.image_url if group.image%>
-  </p>
 
-  <p>
-    <strong>User:</strong>
-    <%= group.user_id %>
-  </p>
+    <div>
+    <%= group.amount %>
 
-</div>
+  </div>
+  </div>
+
+<%
+=begin%>
+ </div> 
+<%
+=end%>
+<%end%>
+<%
+=begin%>
+ 
+ </div>  
+<%
+=end%>
+

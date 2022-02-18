@@ -3,7 +3,9 @@ class SpendingsController < ApplicationController
 
   # GET /spendings or /spendings.json
   def index
-    @spendings = Spending.all
+    @spendings = current_user.spendings.all
+    @groups = Group.where(user: current_user)
+    @total_spending = @spendings.all.sum(:amount)
   end
 
   # GET /spendings/1 or /spendings/1.json
@@ -11,19 +13,28 @@ class SpendingsController < ApplicationController
 
   # GET /spendings/new
   def new
-    @spending = Spending.new
-    @group = Group.all
+    @spending = current_user.spendings.new
+
+    @groups = Group.where(user: current_user)
   end
 
   # GET /spendings/1/edit
-  def edit; end
+  def edit
+    @groups = Group.where(user: current_user)
+  end
 
   # POST /spendings or /spendings.json
   def create
-    @spending = Spending.new(spending_params)
+    @groups = Group.where(user: current_user)
+    @spending = Spending.new(user_id: spending_params[:user_id], name: spending_params[:name],
+                             amount: spending_params[:amount])
 
     respond_to do |format|
       if @spending.save
+        params[:spending][:group_id].each do |group_id|
+          puts group_id
+          GroupSpending.create!(group_id: group_id.to_i, spending_id: @spending.id)
+        end
         format.html { redirect_to spending_url(@spending), notice: 'Spending was successfully created.' }
         format.json { render :show, status: :created, location: @spending }
       else
@@ -65,6 +76,6 @@ class SpendingsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def spending_params
-    params.require(:spending).permit(:name, :amount, :user_id)
+    params.require(:spending).permit(:name, :amount, :user_id, :group_id)
   end
 end

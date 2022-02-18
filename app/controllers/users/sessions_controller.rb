@@ -6,7 +6,8 @@ class Users::SessionsController < Devise::SessionsController
       redirect_to new_user_session_path
     elsif myuser.valid_password?(params[:user][:password])
       flash[:notice] = 'Welcome back!'
-      super
+      sign_in(:user, myuser)
+      redirect_to root_path
     else
       flash[:notice] = 'Incorrect password'
       redirect_to new_user_session_path

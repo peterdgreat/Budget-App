@@ -25,12 +25,16 @@ class SpendingsController < ApplicationController
 
   # POST /spendings or /spendings.json
   def create
-    @spending = Spending.new(spending_params)
-    @spending.user = current_user
     @groups = Group.where(user: current_user)
+    @spending = Spending.new(user_id: spending_params[:user_id], name: spending_params[:name],
+                             amount: spending_params[:amount])
 
     respond_to do |format|
       if @spending.save
+        params[:spending][:group_id].each do |group_id|
+          puts group_id
+          GroupSpending.create!(group_id: group_id.to_i, spending_id: @spending.id)
+        end
         format.html { redirect_to spending_url(@spending), notice: 'Spending was successfully created.' }
         format.json { render :show, status: :created, location: @spending }
       else

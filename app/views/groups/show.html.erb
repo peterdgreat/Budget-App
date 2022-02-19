@@ -1,5 +1,5 @@
-
-  <% if group.errors.any? %>
+<%= render "/shared/navbar" %>
+  <% if @group.errors.any? %>
 <p style="color: green"><%= notice %></p>
 <%end%>
 <%= render @group %>

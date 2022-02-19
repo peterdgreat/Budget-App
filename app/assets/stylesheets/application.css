@@ -43,3 +43,9 @@
   width: 70px;
   height: 70px;
 }
+
+.offcanvas-end {
+  top: 0;
+  right: 0;
+  width: 200px;
+}

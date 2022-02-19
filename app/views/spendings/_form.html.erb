@@ -10,31 +10,32 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+<div class="d-flex flex-column align-items-center">
+  <div class="field my-3"> 
+    <%= form.label :name,class: "form-label"%>
+    <%= form.text_field :name , class: "form-control"  %>
   </div>
 
-  <div>
-    <%= form.label :amount, style: "display: block" %>
-    <%= form.text_field :amount %>
+  <div class="field my-3">
+    <%= form.label :amount,class: "form-label" %>
+    <%= form.text_field :amount , class: "form-control" %>
   </div>
 
-  <div>
- <%= form.radio_button :user_id, "#{current_user.id}" %>
-<%= form.label :user_id, "Click to confirm name #{current_user.name}" %>
+  <div class="field my-3">
+ <%= form.radio_button :user_id, "#{current_user.id}"  %>
+<%= form.label :user_id, "Click to confirm name #{current_user.name}" ,class: "form-label" %>
   </div>
- <div class="d-flex flex-wrap justify-content-center align-items-center p-2">
+ <div class="field my-3">
     <% Group.where(user_id: current_user.id).each_with_index do |g , i| %>
-           <span class="px-1">
-              <%= form.check_box :group_id, {multiple: true}, g.id, nil %><%= g.name%>
-           </span>
+
+              <%= form.check_box :group_id,  {multiple: true}, g.id, nil   %><%= g.name%>
+        
     <% end %>
  </div>
 
  
   <div>
-    <%= form.submit %>
+    <%= form.submit  class: "btn btn-primary" %>
+  </div>
   </div>
 <% end %>

@@ -33,9 +33,19 @@ Ruby >= 3.0.0
 Run git clone on this project at the desired directory:
 
 https://github.com/peterdgreat/Budget-App
+
+cd Budget-App
+
 ### Install
 bundle install
-### Usage
+
+rails db:create
+
+rails db:migrate
+
+rails db:seed // if you have any
+
+rails s
 
 ### Run tests
 bundle install rspec

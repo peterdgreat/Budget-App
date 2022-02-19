@@ -1,9 +1,11 @@
 <%= render partial: "shared/navbar", locals: { title: "NEW CATEGORIES" } %>
 <br/>
+<div class= "my-3">
 <%= render "form", group: @group %>
+</div>
 
 <br>
 
 <div  class= "d-flex justify-content-center">
-  <%= link_to "Back to groups", groups_path, class: "btn" %>
+  <%= link_to "Back to categories", groups_path, class: "btn" %>
 </div>

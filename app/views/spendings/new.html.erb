@@ -1,9 +1,11 @@
 <%= render partial: "shared/navbar", locals: { title: "TRANSACTIONS" } %>
-
+<br/>
+<div class= "my-3">
 <%= render "form", spending: @spending %>
+</div>
 
 <br>
 
-<div>
-  <%= link_to "Back to spendings", spendings_path %>
+<div  class= "d-flex justify-content-center">
+  <%= link_to "Back to Spendings", spendings_path, class: "btn" %>
 </div>

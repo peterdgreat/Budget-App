@@ -1,11 +1,15 @@
 <%= render partial: "shared/navbar", locals: { title: "TRANSACTIONS" } %>
+  <br/>
+  <br/>
+  <% if @spending.errors.any? %>
 <p style="color: green"><%= notice %></p>
-
+<%end%>
+<div class="my-3">
 <%= render @spending %>
+</div>
 
-<div>
-  <%= link_to "Edit this spending", edit_spending_path(@spending) %> |
-  <%= link_to "Back to spendings", spendings_path %>
+<div class= "d-flex flex-column justify-content-center align-items-center my-5">
+  <%= link_to "Back", spendings_path , class: "btn" %>
 
-  <%= button_to "Destroy this spending", @spending, method: :delete %>
+  <%= button_to "Destroy this transaction", @spending, method: :delete  , class: "btn btn-danger" %>
 </div>

@@ -61,8 +61,6 @@
   align-self: end;
 }
 
-/* .end {
-  align-self: end;
-  height: 100%;
-  flex-direction: column;
-} */
+.spend-h {
+  height: 200px;
+}

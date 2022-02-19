@@ -1,0 +1,41 @@
+<%= form_with(model: spending) do |form| %>
+  <% if spending.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(spending.errors.count, "error") %> prohibited this spending from being saved:</h2>
+
+      <ul>
+        <% spending.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="d-flex flex-column align-items-center">
+  <div class="field my-3"> 
+    <%= form.label :name,class: "form-label"%>
+    <%= form.text_field :name , class: "form-control"  %>
+  </div>
+
+  <div class="field my-3">
+    <%= form.label :amount,class: "form-label" %>
+    <%= form.text_field :amount , class: "form-control" %>
+  </div>
+
+  <div class="field my-3">
+ <%= form.radio_button :user_id, "#{current_user.id}"  %>
+<%= form.label :user_id, "Click to confirm name #{current_user.name}" ,class: "form-label" %>
+  </div>
+ <div class="field my-3">
+    <% Group.where(user_id: current_user.id).each_with_index do |g , i| %>
+
+              <%= form.check_box :group_id,  {multiple: true}, g.id, nil   %><%= g.name%>
+        
+    <% end %>
+ </div>
+
+ 
+  <div>
+    <%= form.submit  class: "btn btn-primary" %>
+  </div>
+  </div>
+<% end %>

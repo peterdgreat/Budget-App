@@ -1,0 +1,13 @@
+<div  class="my-3">
+<%= link_to spending_path(spending.id), class:"text-decoration-none text-dark shadow d-flex mx-3 mt-3 align-items-center  " do %>
+  <div class=" d-flex w-100 spend-h mx-3 justify-content-between align-items-center ">
+  <p>
+    <%= spending.name %>
+  </p>
+
+  <p>
+    <%= spending.amount %>
+  </p>
+  </div>
+<%end%>
+</div>

@@ -1,0 +1,34 @@
+<%= form_with(model: group) do |form| %>
+  <% if group.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
+
+      <ul>
+        <% group.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="d-flex flex-column align-items-center">
+  <div class="field my-3">
+    <%= form.label :name,class: "form-label" %>
+    <%= form.text_field :name , class: "form-control",  placeholder: "Name"%>
+  </div>
+
+  <div class="field my-3">
+   <%= image_tag form.object.image_url if form.object.cached_image_data %>
+ <%= form.hidden_field :image, value: form.object.cached_image_data %>
+    <%= form.file_field :image, class: "form-control" %>
+  </div>
+
+<div class="field my-3">
+<%= form.radio_button :user_id, "#{current_user.id}"  %>
+<%= form.label :user_id, "Click to confirm name #{current_user.name}" ,class: "form-label" %>
+
+</div>
+  <div>
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+  </div>
+<% end %>

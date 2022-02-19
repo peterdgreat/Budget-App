@@ -1,0 +1,71 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+.smart {
+  color: #434b54;
+}
+
+.d-height {
+  height: 100vh;
+}
+
+.log-in-container {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.btn-l {
+  background-color: #3778c2;
+  color: #434b54;
+}
+
+.bt-s {
+  background-color: #fff;
+  color: #434b54;
+}
+
+.wrapper {
+  margin-bottom: 250px;
+}
+
+.btn {
+  width: 250px;
+}
+
+.icon {
+  width: 70px;
+  height: 70px;
+}
+
+.offcanvas-end {
+  top: 0;
+  right: 0;
+  width: 200px;
+}
+
+.new-group {
+  background-color: #5fb523;
+  padding: 15px 0 15px 0;
+  align-self: end;
+}
+
+.spend-h {
+  height: 200px;
+}
+
+.g-img {
+  width: 150px;
+  height: 150px;
+}

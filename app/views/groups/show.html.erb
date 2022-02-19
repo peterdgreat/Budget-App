@@ -1,0 +1,20 @@
+<div class="d-height d-flex flex-column justify-content-between" >
+<%= render partial: "shared/navbar", locals: { title: "CATEGORIES" } %>
+<br/>
+  <% if @group.errors.any? %>
+<p style="color: green"><%= notice %></p>
+<%end%>
+<%= render @group %>
+
+<div>
+<div class= "d-flex flex-column justify-content-center align-items-center my-5">
+  <%= link_to "Back to Category", groups_path, class: "btn" %>
+  <%= button_to "Destroy this Category", @group, method: :delete , class: "btn btn-danger" %>
+</div>
+  <section class= "end">
+<div class = "new-group d-flex justify-content-center">
+<%= link_to "ADD TRANSACTIONS", new_spending_path,  class: "btn btn-outline-light"%>
+</div>
+<section>
+</div>
+</div>

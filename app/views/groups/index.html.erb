@@ -1,20 +1,25 @@
+<div class="d-height d-flex flex-column justify-content-between" >
 
-
-<%= render "/shared/navbar" %>
+<%= render partial: "shared/navbar", locals: { title: "CATEGORIES" } %>
+<br/>
 <%if user_signed_in?%>
 
   <% if @groups.blank?%>
     <p>You don't have any category yet! Click below to add one.</p>
   <% else %>
-<div id="groups">
+<div id="groups" class="mt-5 ">
   <% @groups.each do |group| %>
     <%= render group %>
   <% end %>
 </div>
 
 <%end%>
-<%= link_to "New group", new_group_path %>
- <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-danger ms-1" %>
+<section class= "end">
+<div class = "new-group d-flex justify-content-center">
+<%= link_to "New group", new_group_path,  class: "btn btn-outline-light"%>
+</div>
+<section>
+</div>
 <%else%>
 <div class="d-flex flex-column justify-content-end align-items-center log-in-container">
 <div class="wrapper">

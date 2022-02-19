@@ -17,8 +17,13 @@
   color: #434b54;
 }
 
+.d-height {
+  height: 100vh;
+}
+
 .log-in-container {
   height: 100vh;
+  overflow-y: hidden;
 }
 
 .btn-l {
@@ -49,3 +54,15 @@
   right: 0;
   width: 200px;
 }
+
+.new-group {
+  background-color: #5fb523;
+  padding: 15px 0 15px 0;
+  align-self: end;
+}
+
+/* .end {
+  align-self: end;
+  height: 100%;
+  flex-direction: column;
+} */

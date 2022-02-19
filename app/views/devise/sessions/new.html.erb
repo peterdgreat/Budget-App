@@ -1,4 +1,4 @@
-<h2>LOG IN</h2>
+<%= render partial: "shared/navbar", locals: { title: "LOGIN" } %>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <p class="notice"><%= notice %></p>

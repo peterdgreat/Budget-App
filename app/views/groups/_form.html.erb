@@ -10,25 +10,25 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+<div class="d-flex flex-column align-items-center">
+  <div class="field my-3">
+    <%= form.label :name,class: "form-label" %>
+    <%= form.text_field :name , class: "form-control",  placeholder: "Name"%>
   </div>
 
-  <div>
-    <%= form.label :image, style: "display: block" %>
+  <div class="field my-3">
    <%= image_tag form.object.image_url if form.object.cached_image_data %>
  <%= form.hidden_field :image, value: form.object.cached_image_data %>
-    <%= form.file_field :image %>
+    <%= form.file_field :image, class: "form-control" %>
   </div>
 
+<div class="field my-3">
+<%= form.radio_button :user_id, "#{current_user.id}"  %>
+<%= form.label :user_id, "Click to confirm name #{current_user.name}" ,class: "form-label" %>
 
-<%= form.radio_button :user_id, "#{current_user.id}" %>
-<%= form.label :user_id, "Click to confirm name #{current_user.name}" %>
-
-
+</div>
   <div>
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
   </div>
 <% end %>

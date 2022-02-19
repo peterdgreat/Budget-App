@@ -1,5 +1,4 @@
-
-<h2 class="text-center">REGISTER</h2>
+<%= render partial: "shared/navbar", locals: { title: "REGISTER" } %>
   <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>

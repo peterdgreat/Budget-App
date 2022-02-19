@@ -8,34 +8,39 @@ This is a mobile web application where you can manage your budget: you have a li
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Ruby On Rails
+- Github
+- Devise
+- Css
+- Bootstrap
 
-## Live Demo (if available)
+## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://secret-waters-08899.herokuapp.com/)
 
 
+## Video Demo
+[ Video Demo ](https://www.loom.com/share/2cc0457ff83241f481e19dcf99bab6cd)
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
 
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
-
+Ruby >= 3.0.0
 ### Setup
+Run git clone on this project at the desired directory:
 
+https://github.com/peterdgreat/Budget-App
 ### Install
-
+bundle install
 ### Usage
 
 ### Run tests
+bundle install rspec
 
-### Deployment
+run spec
 
 
 
@@ -43,15 +48,10 @@ To get a local copy up and running follow these simple example steps.
 
 👤 **Author1**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@peterdgreat](https://github.com/peterdgreat)
+- Twitter: [@dev_peter_o](https://twitter.com/dev_peter_o)
+- LinkedIn: [peterajayi](https://linkedin.com/in/peterajayi)
 
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 ## 🤝 Contributing
 

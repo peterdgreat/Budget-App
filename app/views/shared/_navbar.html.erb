@@ -22,7 +22,14 @@
               <%= current_user && current_user.name.split(' ').map(&:capitalize).join(' ') || 'user' %>
             </a>
             <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-              <li>      <%= button_to "Logout", destroy_user_session_path, method: :delete, class: " btn-danger ms-1" %></li>
+             
+              <%if user_signed_in?%>
+               <li>      <%= button_to "Logout", destroy_user_session_path, method: :delete, class: " btn-danger ms-1" %></li>
+<%else%>
+ <li>      <%= button_to "Sign In", new_user_session_path,method: :get,class: "ms-1 btn-sp" %></li>
+ <li>      <%= button_to "Sign Up", new_user_registration_path,method: :get,class: "  ms-1 btn-sp" %></li>
+
+<%end%>
           </li>
         </ul>
       </div>

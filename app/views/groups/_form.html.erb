@@ -1,11 +1,11 @@
 <%= form_with(model: group) do |form| %>
   <% if group.errors.any? %>
-<div class="mt-5 d-flex justify-content-center">
-      <h2 class="alert"><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
+<div class="mt-5 alert d-flex justify-content-center">
+      <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
 
       <ul class="list-unstyled">
         <% group.errors.each do |error| %>
-          <li  class="alert "><%= error.full_message %></li>
+          <li><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
@@ -17,7 +17,7 @@
   </div>
 
   <div class="field my-3">
-   <%= image_tag form.object.image_url if form.object.cached_image_data %>
+   <%= image_tag form.object.image_url, class: "g-img image-thumbnail" if form.object.cached_image_data   %>
  <%= form.hidden_field :image, value: form.object.cached_image_data %>
     <%= form.file_field :image, class: "form-control" %>
   </div>

@@ -1,8 +1,16 @@
 <%= render partial: "shared/navbar", locals: { title: "LOGIN" } %>
+<br/>
+<div class="mt-5 d-flex justify-content-center">
+ <% if notice %>
 
+  
+  <p class="alert " role="alert"><%= notice %></p>
+  <%elsif alert%>
+   <p class="alert" role="alert"><%= alert %></p>
+ 
+  <% end %>
+   </div>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
 <div class="d-flex flex-column align-items-center">
   <div class="field">
     <%= f.label :email, class: "form-label" %><br />

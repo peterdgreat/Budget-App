@@ -16,7 +16,7 @@ This is a mobile web application where you can manage your budget: you have a li
 
 ## Live Demo
 
-[Live Demo Link](https://secret-waters-08899.herokuapp.com/)
+[Live Demo Link](https://smart-budgets-app.herokuapp.com/)
 
 
 ## Video Demo

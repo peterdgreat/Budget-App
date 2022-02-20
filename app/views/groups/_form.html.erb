@@ -1,11 +1,11 @@
 <%= form_with(model: group) do |form| %>
   <% if group.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
+<div class="mt-5 d-flex justify-content-center">
+      <h2 class="alert"><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
 
-      <ul>
+      <ul class="list-unstyled">
         <% group.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+          <li  class="alert "><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
